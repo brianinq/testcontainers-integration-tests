@@ -1,9 +1,6 @@
 package com.example.integrationstudents.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -15,6 +12,7 @@ import lombok.*;
 @Table(name = "students")
 public class Student {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Column(name = "first_name")
     private String firstName;
